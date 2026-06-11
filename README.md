@@ -14,7 +14,7 @@ A single-page, fully static portfolio built with plain **HTML, CSS, and a little
 |------|---------|
 | `index.html` | The entire website (HTML + CSS + JS inline) |
 | `README.md` | This file |
-| `LICENSE` | MIT license |
+| `LICENSE` | Pawan Singh Ahirwar |
 | `.gitignore` | Ignores OS / editor junk files |
 
 ## Run it locally
@@ -63,4 +63,4 @@ git push
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Pawan — see [LICENSE](LICENSE).
