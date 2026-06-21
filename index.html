@@ -1,474 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawan Singh Ahirwar — AI/ML Engineer</title>
-<meta name="description" content="AI/ML Engineer building computer-vision and language models at national scale for India's Ministry of Agriculture. M.Tech, IIT Bombay.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pawan Singh Ahirwar — AI/ML Engineer | Computer Vision, NLP, Generative AI</title>
+<meta name="description" content="Portfolio of Pawan Singh Ahirwar, AI/ML Engineer (M.Tech, IIT Bombay). Computer vision, NLP, and generative AI — production CNN classifiers and self-correcting RAG systems." />
+<meta name="author" content="Pawan Singh Ahirwar" />
+
+<!-- Open Graph (nice previews when shared) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pawan Singh Ahirwar — AI/ML Engineer" />
+<meta property="og:description" content="Computer Vision · NLP · Generative AI. M.Tech, IIT Bombay. Building production ML and RAG systems." />
+<meta property="og:url" content="https://pawanahirwa.github.io/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
 <style>
-  :root{
-    --ink:#F7FAF8;      /* page background */
-    --ink-2:#EFF4F0;    /* alternating section band */
-    --surface:#FFFFFF;  /* cards */
-    --surface-2:#F4F8F5;
-    --line:rgba(20,70,45,.13);
-    --line-strong:rgba(20,70,45,.22);
-    --head:#15281F;     /* headings */
-    --text:#3A4A41;     /* body text */
-    --muted:#647568;
-    --faint:#93A299;
-    --green:#15795A;
-    --green-deep:#0F5C44;
-    --green-bright:#1E9E73;
-    --amber:#B96E28;
-    --soil:#9C5A28;
-    --maxw:1120px;
-    --r:14px;
+  :root {
+    --paper:    #F4F3EE;
+    --paper-2:  #EDEBE3;
+    --card:     #FFFFFF;
+    --ink:      #15202B;
+    --muted:    #5C6773;
+    --navy:     #1B3A63;
+    --navy-deep:#10294A;
+    --amber:    #DC8A33;
+    --amber-2:  #F0C386;
+    --line:     #E3DFD4;
+    --line-2:   #D6D1C4;
+    --good:     #2F7D5B;
+    --shadow:   0 1px 2px rgba(20,32,43,.04), 0 8px 30px rgba(20,32,43,.06);
+    --shadow-lg:0 2px 4px rgba(20,32,43,.05), 0 18px 50px rgba(20,32,43,.12);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--ink);
-    color:var(--text);
-    font-family:'Inter',system-ui,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background:
+      radial-gradient(900px 500px at 88% -8%, rgba(220,138,51,.10), transparent 60%),
+      radial-gradient(800px 600px at -5% 10%, rgba(27,58,99,.08), transparent 55%),
+      var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  ::selection{background:var(--green);color:#fff}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 
-  /* ---- type ---- */
-  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--green-deep);display:inline-flex;gap:10px;align-items:center;
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
   }
-  .eyebrow::before{content:"";width:22px;height:1px;background:var(--green-deep);display:inline-block}
-  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.02em;color:var(--head)}
 
-  /* ---- nav ---- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(12px);
-    background:rgba(247,250,248,.78);
-    border-bottom:1px solid var(--line);
+  /* ── Top bar ─────────────────────────────── */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(10px);
+    background: rgba(244,243,238,.78);
+    border-bottom: 1px solid var(--line);
   }
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
-  .brand b{color:var(--green)}
-  .navlinks{display:flex;gap:30px;align-items:center}
-  .navlinks a{font-size:14px;color:var(--muted);transition:color .2s}
-  .navlinks a:hover{color:var(--text)}
-  .nav-cta{
-    font-family:'JetBrains Mono',monospace;font-size:13px;
-    border:1px solid var(--line-strong);padding:8px 16px;border-radius:999px;
-    color:var(--text);transition:.2s;
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
   }
-  .nav-cta:hover{border-color:var(--green);color:var(--green)}
-  .menu-btn{display:none;background:none;border:0;color:var(--text);cursor:pointer;font-size:22px}
-
-  /* ---- hero ---- */
-  header{padding:74px 0 64px;position:relative}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
-  .hero h1{font-size:clamp(40px,6.4vw,76px);margin:20px 0 0}
-  .hero h1 .accent{
-    background:linear-gradient(100deg,var(--green),var(--green-deep));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 1.02rem; letter-spacing: -.01em;
+    color: var(--ink); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
   }
-  .lede{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:34ch;margin-top:22px}
-  .lede b{color:var(--text);font-weight:600}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;
-    padding:12px 20px;border-radius:999px;font-size:14px;font-weight:500;
-    transition:transform .15s,background .2s,border-color .2s;
+  .brand .dot {
+    width: 26px; height: 26px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--navy), var(--amber));
+    color: #fff; display: grid; place-items: center;
+    font-size: .62rem; font-weight: 700; letter-spacing: .02em;
   }
-  .btn:active{transform:translateY(1px)}
-  .btn-primary{background:var(--green);color:#fff;font-weight:600}
-  .btn-primary:hover{background:var(--green-deep)}
-  .btn-ghost{border:1px solid var(--line-strong);color:var(--text)}
-  .btn-ghost:hover{border-color:var(--green);color:var(--green)}
-
-  /* ---- raster panel (signature) ---- */
-  .raster-card{
-    background:linear-gradient(180deg,var(--surface-2),var(--surface));
-    border:1px solid var(--line);border-radius:var(--r);
-    padding:18px;position:relative;overflow:hidden;
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 500;
+    transition: color .2s;
   }
-  .raster-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-  .raster-head .t{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
-  #raster{
-    display:grid;gap:3px;width:100%;aspect-ratio:1/.78;
-    border-radius:8px;overflow:hidden;
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta {
+    border: 1px solid var(--navy); color: var(--navy) !important;
+    padding: 7px 14px; border-radius: 8px; font-size: .85rem !important;
   }
-  #raster .cell{border-radius:2px;transition:background-color 1.1s ease}
-  .raster-legend{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}
-  .lg{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
-  .lg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .nav-cta:hover { background: var(--navy); color: #fff !important; }
+  @media (max-width: 620px) { .nav-links a:not(.nav-cta) { display: none; } }
 
-  /* ---- stats band ---- */
-  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .stat{padding:34px 26px;border-left:1px solid var(--line)}
-  .stat:first-child{border-left:0;padding-left:0}
-  .stat .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);color:var(--green);line-height:1}
-  .stat .l{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-top:10px;letter-spacing:.03em}
-
-  /* ---- sections ---- */
-  section{padding:84px 0}
-  .sec-head{margin-bottom:44px}
-  .sec-head h2{font-size:clamp(28px,4vw,40px);margin-top:14px}
-  .sec-head p{color:var(--muted);margin-top:12px;max-width:56ch}
-
-  /* ---- experience ---- */
-  .role-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;
-    padding-bottom:22px;margin-bottom:30px;border-bottom:1px solid var(--line)}
-  .role-top h3{font-size:23px}
-  .role-top .org{color:var(--muted);font-size:15px;margin-top:6px}
-  .role-top .when{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green-deep);white-space:nowrap}
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .work{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-    padding:24px;transition:transform .2s,border-color .2s;
+  /* ── Hero ────────────────────────────────── */
+  .hero { padding: 74px 0 56px; }
+  .hero .eyebrow {
+    color: var(--navy); display: flex; align-items: center; gap: 10px;
+    margin-bottom: 22px;
   }
-  .work:hover{transform:translateY(-4px);border-color:var(--line-strong)}
-  .work .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
-  .work h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:18px;margin:12px 0 10px}
-  .work p{color:var(--muted);font-size:14.5px}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-  .chip{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);
-    border:1px solid var(--line);padding:4px 9px;border-radius:6px}
-
-  /* ---- projects ---- */
-  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .proj{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-    padding:26px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;
+  .hero .eyebrow::before {
+    content: ""; width: 28px; height: 1.5px; background: var(--amber);
   }
-  .proj:hover{border-color:var(--green);transform:translateY(-4px)}
-  .proj .meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.04em}
-  .proj h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:19px;margin:10px 0}
-  .proj p{color:var(--muted);font-size:14.5px;flex:1}
-  .proj .res{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green)}
-
-  /* ---- skills ---- */
-  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .skillrow{display:grid;grid-template-columns:170px 1fr;gap:20px;align-items:start;
-    padding:20px 0;border-top:1px solid var(--line)}
-  .skillrow .cat{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--green-deep);padding-top:4px}
-  .skillrow .items{display:flex;flex-wrap:wrap;gap:8px}
-  .skillrow .items span{font-size:13.5px;color:var(--text);
-    background:var(--surface);border:1px solid var(--line);padding:5px 12px;border-radius:7px}
-
-  /* ---- education / two-col ---- */
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:54px}
-  .edu-item{padding:20px 0;border-top:1px solid var(--line)}
-  .edu-item:first-of-type{border-top:0;padding-top:0}
-  .edu-item h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:18px}
-  .edu-item .sub{color:var(--muted);font-size:14px;margin-top:5px}
-  .edu-item .yr{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green-deep);margin-top:6px}
-  .ach{list-style:none}
-  .ach li{padding:14px 0 14px 22px;border-top:1px solid var(--line);position:relative;color:var(--muted);font-size:14.5px}
-  .ach li:first-child{border-top:0}
-  .ach li::before{content:"›";position:absolute;left:0;color:var(--green);font-weight:700}
-  .ach li b{color:var(--text);font-weight:600}
-
-  /* ---- contact ---- */
-  .contact{background:var(--ink-2);border-top:1px solid var(--line)}
-  .contact .wrap{text-align:center;padding:90px 28px}
-  .contact h2{font-size:clamp(30px,5vw,52px)}
-  .contact p{color:var(--muted);margin:18px auto 34px;max-width:48ch}
-  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-  footer{border-top:1px solid var(--line);padding:28px 0}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint)}
-
-  /* ---- reveal ---- */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-
-  /* ---- responsive ---- */
-  @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap:38px}
-    .work-grid,.proj-grid,.skills-grid,.two{grid-template-columns:1fr}
-    .stats .wrap{grid-template-columns:repeat(2,1fr)}
-    .stat{border-left:1px solid var(--line);padding:26px 18px}
-    .stat:first-child{padding-left:18px;border-left:1px solid var(--line)}
-    .stat:nth-child(odd){border-left:0;padding-left:0}
-    .skillrow{grid-template-columns:1fr;gap:12px}
-    .navlinks{display:none}
-    .menu-btn{display:block}
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(2.5rem, 7vw, 4.1rem);
+    line-height: 1.02; letter-spacing: -.025em; color: var(--ink);
+    margin-bottom: 18px;
   }
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-    .reveal{opacity:1;transform:none}
+  .hero h1 .accent {
+    background: linear-gradient(120deg, var(--navy), var(--amber));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero .role {
+    font-size: clamp(1.05rem, 2.4vw, 1.32rem); font-weight: 600;
+    color: var(--navy); margin-bottom: 20px;
+  }
+  .hero .role span { color: var(--muted); font-weight: 400; }
+  .hero .lede {
+    font-size: 1.06rem; color: var(--muted); max-width: 600px; margin-bottom: 30px;
+  }
+  .hero .lede strong { color: var(--ink); font-weight: 600; }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 10px; font-size: .92rem; font-weight: 600;
+    text-decoration: none; transition: transform .15s, box-shadow .2s, background .2s;
+  }
+  .btn-primary { background: var(--navy); color: #fff; box-shadow: var(--shadow); }
+  .btn-primary:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-ghost { background: var(--card); color: var(--ink); border: 1px solid var(--line-2); }
+  .btn-ghost:hover { border-color: var(--navy); color: var(--navy); transform: translateY(-2px); }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* eval strip */
+  .evals {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px;
+    padding-top: 28px; border-top: 1px dashed var(--line-2);
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace; font-size: .76rem;
+    background: var(--card); border: 1px solid var(--line);
+    padding: 7px 12px; border-radius: 8px; color: var(--ink);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .chip b { color: var(--navy); font-weight: 600; }
+  .chip .pip { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+
+  /* ── Section scaffolding ─────────────────── */
+  section { padding: 56px 0; }
+  .sec-head { margin-bottom: 30px; }
+  .sec-head .label { color: var(--amber); margin-bottom: 10px; display: block; }
+  .sec-head h2 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -.02em; color: var(--ink);
+  }
+
+  /* ── Work cards ──────────────────────────── */
+  .cards { display: grid; gap: 18px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 26px; box-shadow: var(--shadow);
+    transition: transform .18s, box-shadow .22s, border-color .22s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--line-2); }
+  .card .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+  .card h3 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.22rem;
+    letter-spacing: -.01em; color: var(--ink);
+  }
+  .card .tag { color: var(--muted); flex-shrink: 0; padding-top: 4px; }
+  .card p { color: var(--muted); font-size: .98rem; margin-bottom: 16px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+  .pill {
+    font-family: 'JetBrains Mono', monospace; font-size: .7rem;
+    background: var(--paper-2); color: var(--navy);
+    padding: 5px 9px; border-radius: 6px; letter-spacing: .02em;
+  }
+  .card .links { display: flex; gap: 18px; }
+  .card .links a {
+    color: var(--navy); text-decoration: none; font-weight: 600; font-size: .9rem;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .card .links a:hover { color: var(--amber); }
+  .card .links a::after { content: "→"; transition: transform .15s; }
+  .card .links a:hover::after { transform: translateX(3px); }
+  .card.gov { border-left: 3px solid var(--amber); }
+
+  /* ── Focus grid ──────────────────────────── */
+  .focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .focus { grid-template-columns: 1fr; } }
+  .ftile {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px; box-shadow: var(--shadow);
+  }
+  .ftile h4 {
+    font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; color: var(--ink);
+    margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+  }
+  .ftile h4 .sq { width: 9px; height: 9px; border-radius: 3px; background: var(--navy); }
+  .ftile:nth-child(2) h4 .sq { background: var(--amber); }
+  .ftile:nth-child(3) h4 .sq { background: var(--good); }
+  .ftile p { color: var(--muted); font-size: .9rem; }
+
+  /* ── Experience ──────────────────────────── */
+  .xp { border-left: 2px solid var(--line-2); padding-left: 24px; }
+  .xp .item { position: relative; padding-bottom: 26px; }
+  .xp .item:last-child { padding-bottom: 0; }
+  .xp .item::before {
+    content: ""; position: absolute; left: -31px; top: 5px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--navy);
+  }
+  .xp .role { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.08rem; color: var(--ink); }
+  .xp .org { color: var(--navy); font-weight: 500; font-size: .95rem; margin: 2px 0 6px; }
+  .xp .when { color: var(--muted); margin-bottom: 8px; }
+  .xp ul { list-style: none; color: var(--muted); font-size: .95rem; }
+  .xp ul li { padding-left: 16px; position: relative; margin-bottom: 4px; }
+  .xp ul li::before { content: "›"; position: absolute; left: 0; color: var(--amber); }
+
+  /* ── Contact ─────────────────────────────── */
+  .contact {
+    background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-radius: 22px; padding: 48px 40px; text-align: center; color: #fff;
+    box-shadow: var(--shadow-lg);
+  }
+  .contact h2 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+    font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -.02em; margin-bottom: 12px;
+  }
+  .contact p { color: rgba(255,255,255,.8); max-width: 440px; margin: 0 auto 26px; }
+  .contact .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .contact .links a {
+    background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.2);
+    color: #fff; text-decoration: none; padding: 11px 18px; border-radius: 10px;
+    font-weight: 600; font-size: .92rem; transition: background .2s, transform .15s;
+  }
+  .contact .links a:hover { background: rgba(255,255,255,.20); transform: translateY(-2px); }
+  .contact .links a.amber { background: var(--amber); border-color: var(--amber); color: var(--navy-deep); }
+  .contact .links a.amber:hover { background: var(--amber-2); }
+  .email-line {
+    margin-top: 22px; display: inline-flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+    padding: 8px 8px 8px 16px; border-radius: 10px;
+  }
+  .email-line .mono { color: rgba(255,255,255,.92); font-size: .8rem; text-transform: none; letter-spacing: 0; }
+  .copy-btn {
+    font-family: 'JetBrains Mono', monospace; font-size: .72rem; cursor: pointer;
+    background: rgba(255,255,255,.16); color: #fff; border: 0;
+    padding: 6px 12px; border-radius: 7px; transition: background .2s;
+  }
+  .copy-btn:hover { background: rgba(255,255,255,.28); }
+  @media (max-width: 460px) { .email-line { flex-wrap: wrap; justify-content: center; } }
+
+  footer { padding: 36px 0 48px; text-align: center; color: var(--muted); }
+  footer .mono { color: var(--muted); }
+
+  /* ── About ───────────────────────────────── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; align-items: start; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 26px; } }
+  .about-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px; box-shadow: var(--shadow);
+  }
+  .about-card .mono { color: var(--amber); display: block; margin-bottom: 14px; }
+  .about-card .fact { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+  .about-card .fact:last-child { border-bottom: 0; }
+  .about-card .fact .k { color: var(--muted); min-width: 92px; }
+  .about-card .fact .v { color: var(--ink); font-weight: 500; }
+  .about-text p { font-size: 1.06rem; color: var(--muted); margin-bottom: 16px; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-text strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Skills ──────────────────────────────── */
+  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 680px) { .skills { grid-template-columns: 1fr; } }
+  .skill-group {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 22px; box-shadow: var(--shadow);
+  }
+  .skill-group h4 {
+    font-family: 'Space Grotesk', sans-serif; font-size: 1rem; color: var(--navy);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .skill-group h4 .sq { width: 9px; height: 9px; border-radius: 3px; background: var(--amber); }
+  .skill-group .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-group .tags span {
+    font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+    background: var(--paper-2); color: var(--ink); padding: 5px 9px; border-radius: 6px;
+  }
+
+  /* reveal — only hide when JS active (html.js); content never disappears without JS */
+  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .btn:hover, .card:hover, .contact .links a:hover { transform: none; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">PSA<b>.</b></a>
-    <div class="navlinks">
+<header>
+  <nav class="wrap nav">
+    <a class="brand" href="#top"><span class="dot">PSA</span> Pawan Singh Ahirwar</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
       <a class="nav-cta" href="#contact">Get in touch</a>
     </div>
-    <button class="menu-btn" aria-label="Jump to contact" onclick="location.hash='#contact'">☰</button>
-  </div>
-</nav>
-
-<header id="top">
-  <div class="wrap hero-grid">
-    <div class="hero reveal">
-      <span class="eyebrow">AI / ML Engineer · Delhi, India</span>
-      <h1>Computer vision and language models, built to run at <span class="accent">national scale.</span></h1>
-      <p class="lede">M.Tech from <b>IIT Bombay</b>, now building AI for India's <b>Ministry of Agriculture</b> — crop classification, pest detection, and document intelligence across <b>800,000+</b> field images.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#work">View work →</a>
-        <a class="btn btn-ghost" href="https://github.com/pawanahirwar" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/pawan-singh-ahirwar" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="mailto:pawan.ahirwar.c2025@iitbombay.org">Email</a>
-      </div>
-    </div>
-
-    <div class="raster-card reveal" aria-hidden="true">
-      <div class="raster-head">
-        <span class="t">crop_classification.tif</span>
-        <span class="dot"></span>
-      </div>
-      <div id="raster"></div>
-      <div class="raster-legend">
-        <span class="lg"><i style="background:#15795A"></i>vegetation</span>
-        <span class="lg"><i style="background:#3FBF8C"></i>healthy crop</span>
-        <span class="lg"><i style="background:#C2772E"></i>soil / fallow</span>
-        <span class="lg"><i style="background:#0F5C44"></i>canopy</span>
-      </div>
-    </div>
-  </div>
+  </nav>
 </header>
 
-<div class="stats">
-  <div class="wrap">
-    <div class="stat reveal"><div class="n">800K+</div><div class="l">field images processed</div></div>
-    <div class="stat reveal"><div class="n">92%</div><div class="l">crop classification accuracy</div></div>
-    <div class="stat reveal"><div class="n">8+</div><div class="l">crop types supported</div></div>
-    <div class="stat reveal"><div class="n">3</div><div class="l">national AI programs</div></div>
-  </div>
-</div>
+<main id="top">
 
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Experience</span>
-      <h2>Production AI for Indian agriculture</h2>
-      <p>As an AI/ML Research Associate, I ship models that thousands of farmers and field officers depend on — from raw imagery to production-ready deployment.</p>
-    </div>
-
-    <div class="role-top reveal">
-      <div>
-        <h3>Research Associate (AI/ML)</h3>
-        <div class="org">Ministry of Agriculture &amp; Farmers Welfare, Government of India · IIT Bombay</div>
-      </div>
-      <div class="when">Sep 2025 — Present · Delhi</div>
-    </div>
-
-    <div class="work-grid">
-      <div class="work reveal">
-        <span class="tag">Digital Crop Survey</span>
-        <h4>Crop classification at scale</h4>
-        <p>Built a CNN-based classifier reaching 92% accuracy on 800,000+ field images across 8+ crop types, deployed into government production.</p>
-        <div class="chips"><span class="chip">TensorFlow</span><span class="chip">Fastai</span><span class="chip">EfficientNet</span><span class="chip">Transfer Learning</span></div>
-      </div>
-      <div class="work reveal">
-        <span class="tag">Pest Surveillance · NPSS</span>
-        <h4>Pest &amp; disease detection</h4>
-        <p>Developed a multi-class deep-learning model across 5+ crops at 87% test accuracy, enabling early-stage pest alerts at a national scale.</p>
-        <div class="chips"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">Data Augmentation</span><span class="chip">GPU Training</span></div>
-      </div>
-      <div class="work reveal">
-        <span class="tag">Document Intelligence</span>
-        <h4>Local RAG chatbot</h4>
-        <p>Engineered a fully offline RAG pipeline — parsing, chunking, embeddings, retrieval — for grounded natural-language querying of PDFs.</p>
-        <div class="chips"><span class="chip">LangChain</span><span class="chip">Ollama</span><span class="chip">ChromaDB</span><span class="chip">Gradio</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" style="background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Selected Projects</span>
-      <h2>Things I built end to end</h2>
-      <p>Independent work spanning NLP, classical ML, and recommendation — each taken from data pipeline to deployed product.</p>
-    </div>
-    <div class="proj-grid">
-      <div class="proj reveal">
-        <span class="meta">NLP · 2024</span>
-        <h4>Cyberbullying Recognizer &amp; Summarizer</h4>
-        <p>ETL and EDA on Twitter data with SpaCy and Count Vectorizer, then a Decision Tree classifier served as a Flask API and containerized with Docker.</p>
-        <div class="res">89% detection accuracy · Dockerized API</div>
-      </div>
-      <div class="proj reveal">
-        <span class="meta">Regression · 2024</span>
-        <h4>Solar Irradiation Prediction</h4>
-        <p>Automated EDA/ETL pipeline with Decision Trees, Random Forest, and XGBoost, tuned via Grid Search and K-Fold CV, with Box-Cox feature transforms.</p>
-        <div class="res">R² improved by 0.2</div>
-      </div>
-      <div class="proj reveal">
-        <span class="meta">Recsys · 2024</span>
-        <h4>Content-Based Movie Recommender</h4>
-        <p>Cosine-similarity recommender over 5,000+ movies with a feature-extraction pipeline, deployed as a real-time Streamlit web app.</p>
-        <div class="res">5,000+ titles · live app</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Toolbox</span>
-      <h2>Skills &amp; stack</h2>
-    </div>
-    <div class="reveal">
-      <div class="skillrow">
-        <div class="cat">Machine Learning</div>
-        <div class="items"><span>Scikit-learn</span><span>XGBoost</span><span>Random Forest</span><span>Decision Trees</span><span>K-Fold CV</span><span>Grid Search</span></div>
-      </div>
-      <div class="skillrow">
-        <div class="cat">Deep Learning / CV</div>
-        <div class="items"><span>TensorFlow</span><span>PyTorch</span><span>Fastai</span><span>CNN</span><span>EfficientNet</span><span>YOLO</span><span>OpenCV</span><span>Transfer Learning</span></div>
-      </div>
-      <div class="skillrow">
-        <div class="cat">NLP &amp; Gen AI</div>
-        <div class="items"><span>SpaCy</span><span>LangChain</span><span>RAG</span><span>ChromaDB</span><span>Ollama</span><span>Hugging Face</span><span>Prompt Engineering</span></div>
-      </div>
-      <div class="skillrow">
-        <div class="cat">Data &amp; Analytics</div>
-        <div class="items"><span>Python</span><span>NumPy</span><span>Pandas</span><span>SQL</span><span>EDA / ETL</span><span>Tableau</span><span>Power BI</span><span>Matplotlib</span></div>
-      </div>
-      <div class="skillrow">
-        <div class="cat">Deploy &amp; Infra</div>
-        <div class="items"><span>Flask</span><span>Docker</span><span>Streamlit</span><span>Gradio</span><span>Git</span><span>AWS</span><span>Azure</span><span>GCP</span><span>CUDA</span><span>Linux</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education" style="background:var(--ink-2);border-top:1px solid var(--line)">
-  <div class="wrap">
-    <div class="two">
-      <div class="reveal">
-        <div class="sec-head" style="margin-bottom:30px">
-          <span class="eyebrow">Education</span>
-          <h2>Where I trained</h2>
-        </div>
-        <div class="edu-item">
-          <h4>M.Tech, Technology &amp; Development</h4>
-          <div class="sub">Indian Institute of Technology, Bombay · CGPA 8.17 / 10</div>
-          <div class="yr">Aug 2023 — Jun 2025</div>
-        </div>
-        <div class="edu-item">
-          <h4>B.E., Mechanical Engineering</h4>
-          <div class="sub">Institute of Engineering &amp; Technology, DAVV, Indore</div>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="sec-head" style="margin-bottom:30px">
-          <span class="eyebrow">Beyond the code</span>
-          <h2>Recognition</h2>
-        </div>
-        <ul class="ach">
-          <li><b>Published research</b> presented at the 5th International Conference on Waste Management, IIT Guwahati.</li>
-          <li><b>Cultural Secretary, IIT Bombay</b> — elected representative for 100+ students, organised 7+ events.</li>
-          <li><b>Interview Coordinator</b>, IIT Bombay Placement Team — coordinated 2,000+ interviews across 20+ firms.</li>
-          <li><b>Research Intern</b>, Swami Vivekananda Youth Movement — field research across 5+ villages in Karnataka.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact" style="padding:0">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow" style="justify-content:center">Open to opportunities</span>
-      <h2>Let's build something that ships.</h2>
-      <p>I'm open to AI/ML Engineer roles — computer vision, NLP, and generative AI. Remote-friendly. The fastest way to reach me is email.</p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:pawan.ahirwar.c2025@iitbombay.org">Email me</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="mono eyebrow">AI/ML Engineer · M.Tech, IIT Bombay · Gov. of India</div>
+      <h1>Pawan Singh<br><span class="accent">Ahirwar</span></h1>
+      <div class="role">Computer Vision · NLP · <span>Generative AI</span></div>
+      <p class="lede">I build and ship machine-learning systems end to end — from <strong>CNN image classifiers on 800K+ images</strong> in production at the Ministry of Agriculture, to <strong>self-correcting RAG pipelines</strong> with reranking and metadata filtering. M.Tech from IIT Bombay.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/pawanahirwa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          GitHub
+        </a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/pawan-singh-ahirwar" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="https://github.com/pawanahirwar" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+
+      <div class="evals">
+        <span class="chip"><span class="pip"></span> CNN classifier · <b>92% acc</b> · 800K+ imgs</span>
+        <span class="chip"><span class="pip"></span> Pest detection · <b>87% test acc</b></span>
+        <span class="chip"><span class="pip"></span> RAG · LangGraph + Qdrant + BGE rerank</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="mono label">About</span>
+        <h2>Who I am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <span class="mono">At a glance</span>
+          <div class="fact"><span class="k">Role</span><span class="v">AI/ML Engineer</span></div>
+          <div class="fact"><span class="k">Org</span><span class="v">Min. of Agriculture, Govt. of India</span></div>
+          <div class="fact"><span class="k">Education</span><span class="v">M.Tech, IIT Bombay</span></div>
+          <div class="fact"><span class="k">Base</span><span class="v">B.Tech, Mechanical Engineering</span></div>
+          <div class="fact"><span class="k">Focus</span><span class="v">CV · NLP · Generative AI</span></div>
+        </div>
+        <div class="about-text reveal">
+          <p>I'm an <strong>AI/ML Engineer</strong> with an M.Tech from IIT Bombay and a background in Mechanical Engineering — a path that taught me to break complex, messy problems down into systems that actually work.</p>
+          <p>Today I work at the <strong>Ministry of Agriculture, Government of India</strong>, building computer-vision and deep-learning models that run at national scale across <strong>hundreds of thousands of crop images</strong>. I care about taking ambiguous goals and large, imperfect datasets and turning them into things that ship and create real impact — especially in agriculture and underserved communities.</p>
+          <p>Lately I've gone deep into <strong>generative AI</strong>, building retrieval-augmented systems that are precise, grounded in their sources, and efficient enough to run on modest hardware. I like building the whole pipeline, end to end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="mono label">Selected Work</span>
+        <h2>Projects &amp; systems I've built</h2>
+      </div>
+      <div class="cards">
+
+        <div class="card gov reveal">
+          <div class="top">
+            <h3>Digital Crop Survey — CNN Image Classifier</h3>
+            <span class="mono tag">Gov. of India</span>
+          </div>
+          <p>Production computer-vision model classifying 8+ crop types for the Ministry of Agriculture's nationwide crop survey, with preprocessing pipelines built to handle very large agricultural image datasets for government deployment.</p>
+          <div class="stack">
+            <span class="pill">TensorFlow</span><span class="pill">CNN</span><span class="pill">Transfer Learning</span><span class="pill">Data Augmentation</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="top">
+            <h3>Advanced RAG — LangGraph + Qdrant + BGE Reranker</h3>
+            <span class="mono tag">Open source</span>
+          </div>
+          <p>A self-correcting Retrieval-Augmented Generation system built as a stateful graph (retrieve → rerank → grade → generate). Cross-encoder reranking, Qdrant metadata filtering, page-level citations, and a "not found" guard so it won't hallucinate. Runs fully offline.</p>
+          <div class="stack">
+            <span class="pill">LangGraph</span><span class="pill">Qdrant</span><span class="pill">BGE Reranker</span><span class="pill">Ollama</span><span class="pill">Gradio</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/pawanahirwa/Advanced-RAG-LangGraph" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="top">
+            <h3>Local RAG Chatbot — Chat with your PDFs</h3>
+            <span class="mono tag">Open source</span>
+          </div>
+          <p>A fully local RAG chatbot that answers questions grounded in an uploaded PDF — embeddings, vector search, and a local LLM, all running offline with no API keys. The foundation I later rebuilt with reranking and a graph pipeline.</p>
+          <div class="stack">
+            <span class="pill">LangChain</span><span class="pill">ChromaDB</span><span class="pill">Ollama</span><span class="pill">Gradio</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/pawanahirwa/Local-RAG-Chatbot" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="top">
+            <h3>Cyberbullying Recognizer &amp; Summarizer</h3>
+            <span class="mono tag">NLP · 89% acc</span>
+          </div>
+          <p>An NLP classifier for cyberbullying detection on social-media text — ETL and EDA with SpaCy, feature extraction, a Decision Tree model at 89% accuracy, deployed as a Flask Web API and containerized with Docker.</p>
+          <div class="stack">
+            <span class="pill">SpaCy</span><span class="pill">Flask</span><span class="pill">Docker</span><span class="pill">scikit-learn</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="mono label">Skills &amp; Expertise</span>
+        <h2>What I work with</h2>
+      </div>
+      <div class="skills">
+        <div class="skill-group reveal">
+          <h4><span class="sq"></span> Computer Vision &amp; Deep Learning</h4>
+          <div class="tags">
+            <span>TensorFlow</span><span>PyTorch</span><span>CNN</span><span>YOLO</span><span>Transfer Learning</span><span>OpenCV</span><span>Image Classification</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="sq"></span> NLP</h4>
+          <div class="tags">
+            <span>SpaCy</span><span>Text Classification</span><span>Count Vectorizer</span><span>Feature Extraction</span><span>Hugging Face</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="sq"></span> Generative AI</h4>
+          <div class="tags">
+            <span>LangGraph</span><span>LangChain</span><span>RAG Pipelines</span><span>Qdrant</span><span>ChromaDB</span><span>Ollama</span><span>OpenAI</span><span>Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="sq"></span> Machine Learning</h4>
+          <div class="tags">
+            <span>Scikit-learn</span><span>XGBoost</span><span>Random Forest</span><span>Decision Trees</span><span>Grid Search</span><span>K-Fold CV</span><span>Regression</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="sq"></span> Data &amp; Deployment</h4>
+          <div class="tags">
+            <span>Python</span><span>SQL</span><span>Pandas</span><span>NumPy</span><span>EDA / ETL</span><span>Tableau</span><span>Power BI</span><span>Flask</span><span>Docker</span><span>Streamlit</span><span>Gradio</span><span>Git</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="sq"></span> Cloud &amp; Infrastructure</h4>
+          <div class="tags">
+            <span>AWS</span><span>Azure</span><span>GCP</span><span>CUDA</span><span>GPU (L4 / T4)</span><span>Linux</span><span>Google Colab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="mono label">Experience &amp; education</span>
+        <h2>Where I've worked</h2>
+      </div>
+      <div class="xp">
+        <div class="item reveal">
+          <div class="role">AI/ML Engineer</div>
+          <div class="org">Ministry of Agriculture &amp; Farmers Welfare, Government of India</div>
+          <div class="mono when">Sep 2025 — Present</div>
+          <ul>
+            <li>Digital Crop Survey: CNN crop classifier (92% accuracy, 800K+ images) with large-scale preprocessing for government deployment.</li>
+            <li>National Pest Surveillance System: multi-class deep-learning model for pest &amp; disease detection at 87% test accuracy.</li>
+            <li>Advanced RAG tooling for natural-language querying of agricultural reports.</li>
+          </ul>
+        </div>
+        <div class="item reveal">
+          <div class="role">M.Tech, Technology &amp; Development</div>
+          <div class="org">Indian Institute of Technology, Bombay</div>
+          <div class="mono when">Aug 2023 — Jun 2025 · CGPA 8.17 / 10</div>
+          <ul>
+            <li>Thesis presented at the 5th International Conference on Waste Management, IIT Guwahati.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Let's build something</h2>
+        <p>Open to AI/ML, computer vision, and applied GenAI roles. The fastest way to reach me is email or LinkedIn.</p>
+        <div class="links">
+          <a class="amber" href="mailto:pawan.ahirwar.c2025@iitbombay.org">Email me</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pawan.ahirwar.c2025@iitbombay.org" target="_blank" rel="noopener">Open in Gmail</a>
+          <a href="https://linkedin.com/in/pawan-singh-ahirwar" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/pawanahirwa" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="email-line">
+          <span class="mono">pawan.ahirwar.c2025@iitbombay.org</span>
+          <button id="copyEmail" class="copy-btn" type="button">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr"></span> Pawan Singh Ahirwar</span>
-    <span>Built with HTML, CSS &amp; a little JavaScript · Hosted on GitHub Pages</span>
+    <div class="mono">Pawan Singh Ahirwar · Built with HTML, CSS &amp; JS · Hosted on GitHub Pages</div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  // mark JS active so reveal styles apply
+  document.documentElement.className += ' js';
+  // scroll reveal with safety fallback
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+    // fallback: ensure everything shows even if observer misses
+    setTimeout(() => reveals.forEach(el => el.classList.add('in')), 1500);
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
 
-  /* signature: animated crop-classification raster */
-  (function(){
-    const grid = document.getElementById('raster');
-    if(!grid) return;
-    const cols = 22, rows = 17, total = cols*rows;
-    grid.style.gridTemplateColumns = 'repeat('+cols+',1fr)';
-    const palette = ['#15795A','#1E9E73','#3FBF8C','#88C9A8','#C2772E','#D49A5C','#E8EEE9'];
-    const weights = [3,3,2,3,1,1,1]; // bias toward greens
-    const bag = [];
-    palette.forEach((c,i)=>{for(let k=0;k<weights[i];k++)bag.push(c);});
-    const pick = ()=>bag[Math.floor(Math.random()*bag.length)];
-
-    const cells=[];
-    for(let i=0;i<total;i++){
-      const d=document.createElement('div');
-      d.className='cell';
-      d.style.backgroundColor=pick();
-      grid.appendChild(d);
-      cells.push(d);
-    }
-
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!reduce){
-      setInterval(()=>{
-        const n=8+Math.floor(Math.random()*10);
-        for(let j=0;j<n;j++){
-          cells[Math.floor(Math.random()*total)].style.backgroundColor=pick();
-        }
-      },1400);
-    }
-  })();
-
-  /* scroll reveal */
-  (function(){
-    const els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
-    const io=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-    },{threshold:.12});
-    els.forEach((e,i)=>{e.style.transitionDelay=(i%4*60)+'ms';io.observe(e);});
-  })();
+  // copy email to clipboard
+  const copyBtn = document.getElementById('copyEmail');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const email = 'pawan.ahirwar.c2025@iitbombay.org';
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = 'Copied ✓';
+        setTimeout(() => copyBtn.textContent = 'Copy', 1800);
+      } catch (e) {
+        copyBtn.textContent = email;
+      }
+    });
+  }
 </script>
+
 </body>
 </html>
